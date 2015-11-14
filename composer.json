@@ -1,0 +1,32 @@
+{
+    "name": "ixudra/render",
+    "description": "Custom PHP rendering library for the Laravel 5 framework - developed by Ixudra",
+    "version": "0.0.1",
+    "keywords": ["Ixudra", "Laravel", "Rendering"],
+    "homepage": "http://ixudra.be",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Jan Oris",
+            "email": "jan.oris@gmail.com"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0",
+        "ixudra/translation": "~5.1"
+    },
+
+    "autoload": {
+        "classmap": [
+            "src/database/migrations"
+        ],
+        "psr-0": {
+            "Ixudra\\Render\\": "src/"
+        }
+    },
+
+    "minimum-stability": "stable"
+}
