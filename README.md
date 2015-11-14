@@ -23,26 +23,25 @@ Pull this package in through Composer.
 
 ```
 
-Add the service provider to your `config/app.php` file: 
-
 ```php
 
-    providers     => array(
+    'providers'     => array(
 
         //...
-        'Ixudra\Render\RenderServiceProvider',
+        Ixudra\Render\RenderServiceProvider::class,
 
     ),
 
 ```
 
+Add the facade to your `config/app.php` file:
 
 ```php
 
-    facades     => array(
+    'facades'       => array(
 
         //...
-        'Render'            => 'Ixudra\Render\Facades\Render',
+        'Render'          => Ixudra\Render\Facades\Render::class,
 
     ),
 

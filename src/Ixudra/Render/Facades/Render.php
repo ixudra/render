@@ -1,4 +1,4 @@
-<?php namespace App\Modules\Render\Facades;
+<?php namespace Ixudra\Render\Facades;
 
 
 use Illuminate\Support\Facades\Facade;
