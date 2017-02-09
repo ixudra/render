@@ -1,7 +1,7 @@
 {
     "name": "ixudra/render",
     "description": "Custom PHP rendering library for the Laravel 5 framework - developed by Ixudra",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "keywords": ["Ixudra", "Laravel", "Rendering"],
     "homepage": "http://ixudra.be",
     "license": "MIT",
