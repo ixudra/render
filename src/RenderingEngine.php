@@ -72,25 +72,35 @@ class RenderingEngine {
             $value = abs( $value );
         }
 
-        return number_format( $value, $accuracy, ',', '.' );
-    }
-
-    function currency($value, $accuracy = 0, $forcePositive = false)
-    {
-        $number = $this->number($value, $accuracy, $forcePositive);
-        if( $accuracy > 2 ) {
-            $parts = explode(',', $number);
-
-            $intermediate = $parts[ 0 ] .','. substr($parts[ 1 ], 0, 2);
-            $trailing = substr($parts[ 1 ], 2);
-
-            $number = $intermediate . rtrim( $trailing, 0 );
+        if( $value === '' || is_null($value) ) {
+            $value = 0;
         }
 
-        return '€ '. $number;
+        $number = number_format(str_replace(',', '.', $value), $accuracy, ',', '.');
+        if( $accuracy > 2 ) {
+            $trimmed = rtrim($number, '0');
+            $commaPosition = strpos($trimmed, ',');
+            if( strlen($trimmed) < $commaPosition + 2 && $commaPosition != strlen($number) - 2 ) {
+                $number = $trimmed . str_repeat('0', $commaPosition + 2 - (strlen($trimmed) - 1));
+            } else {
+                $number = $trimmed;
+            }
+        }
+
+        return $number;
     }
 
-    function percentage($value, $accuracy = 2, $forcePositive = false)
+    public function currency($value, $accuracy = 0, $forcePositive = false, $useNonBreakingSpace = true)
+    {
+        $space = ' ';
+        if( $useNonBreakingSpace ) {
+            $space = '&nbsp;';
+        }
+
+        return '€'. $space . $this->number( $value, $accuracy, $forcePositive);
+    }
+
+    public function percentage($value, $accuracy = 2, $forcePositive = false)
     {
         return $this->number( $value, $accuracy, $forcePositive) .'%';
     }
@@ -100,7 +110,7 @@ class RenderingEngine {
      *      Energy functions
      */
 
-    function usage($value, $accuracy = 2, $forcePositive = false)
+    public function usage($value, $accuracy = 2, $forcePositive = false)
     {
         return $this->number( $value, $accuracy, $forcePositive) .' KWh';
     }
