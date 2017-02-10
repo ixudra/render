@@ -23,7 +23,5 @@
         "psr-4": {
             "Ixudra\\Render\\": "src/"
         }
-    },
-
-    "minimum-stability": "stable"
+    }
 }
