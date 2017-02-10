@@ -10,9 +10,7 @@ class RenderServiceProvider extends ServiceProvider {
 
     public function register()
     {
-        $this->app['Render'] = $this->app->singleton(
-            function($app)
-            {
+        $this->app->singleton('Render', function () {
                 return new RenderingEngine();
             }
         );
