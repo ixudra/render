@@ -38,7 +38,7 @@ Add the facade to your `config/app.php` file:
 
 ```php
 
-    'facades'       => array(
+    'aliases'       => array(
 
         //...
         'Render'          => Ixudra\Render\Facades\Render::class,
@@ -63,10 +63,10 @@ Once all dependencies have been included and migrations have been run, you can s
 
     
     // Display a value as currency in the default app locale 
-    Render::date( 23.659 );             // Returns € 5.123,65
+    Render::currency( 5123.6598 );              // Returns € 5.123,65
 
     // Display a value as currency in a specific locale - COMING SOON
-    Render::date( 5123.6598, 'us' );    // Returns $ 5.123,65
+    Render::currency( 5123.6598, 'us' );        // Returns $ 5.123,65
 
 
 ```
