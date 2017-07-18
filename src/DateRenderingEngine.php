@@ -27,12 +27,12 @@ class DateRenderingEngine {
             $value = Carbon::createFromFormat($dateFormat, $value);
         }
 
-        return $value->formatLocalized( $this->getFormat($key, $locale) );
+        return $value->format( $this->getFormat($key, $locale) );
     }
 
     protected function getFormat($key, $locale)
     {
-        if( $locale == '' ) {
+        if( $locale === '' ) {
             $locale = 'default';
         }
 

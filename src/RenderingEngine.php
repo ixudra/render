@@ -18,7 +18,7 @@ class RenderingEngine {
 
     public function getLocale($locale = '')
     {
-        if( $locale != '' ) {
+        if( $locale !== '' ) {
             return $locale;
         }
 
@@ -48,17 +48,17 @@ class RenderingEngine {
 
     public function date($date, $dateFormat, $locale = '')
     {
-        return App::make('\Ixudra\Render\DateRenderingEngine')->date( $date, $dateFormat, $this->getLocale($locale) );
+        return App::make( DateRenderingEngine::class )->date( $date, $dateFormat, $this->getLocale($locale) );
     }
 
     public function time($date, $dateFormat, $locale = '')
     {
-        return App::make('\Ixudra\Render\DateRenderingEngine')->time( $date, $dateFormat, $this->getLocale($locale) );
+        return App::make( DateRenderingEngine::class )->time( $date, $dateFormat, $this->getLocale($locale) );
     }
 
     public function dateTime($date, $dateFormat, $locale = '')
     {
-        return App::make('\Ixudra\Render\DateRenderingEngine')->dateTime( $date, $dateFormat, $this->getLocale($locale) );
+        return App::make( DateRenderingEngine::class )->dateTime( $date, $dateFormat, $this->getLocale($locale) );
     }
 
 
@@ -143,7 +143,7 @@ class RenderingEngine {
     public function fillable($data, $length = 25, $replacement = '')
     {
         if( is_null($data) || empty($data) ) {
-            if( $replacement != '' ) {
+            if( $replacement !== '' ) {
                 $data = $replacement;
             } else {
                 $data = str_repeat('.', $length);
