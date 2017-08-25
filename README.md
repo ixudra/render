@@ -1,6 +1,11 @@
 ixudra/render
 =====================
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/ixudra/render.svg?style=flat-square)](https://packagist.org/packages/ixudra/render)
+[![license](https://img.shields.io/github/license/ixudra/render.svg)]()
+[![StyleCI](https://styleci.io/repos/46180835/shield)](https://styleci.io/repos/46180835)
+[![Total Downloads](https://img.shields.io/packagist/dt/ixudra/render.svg?style=flat-square)](https://packagist.org/packages/ixudra/render)
+
 Custom PHP rendering package for the Laravel 5 framework - developed by [Ixudra](http://ixudra.be).
 
 This package provides several utility methods that allow you to easily display several pieces of information such as dates, prices and much more. All of these representations can be configured depending on the locale of the user. This gives you the ability to display data in a way that is most desirable for your users without difficulty.
