@@ -18,7 +18,7 @@ class DateRenderingEngine {
 
     public function dateTime($value, $dateFormat = 'Y-m-d H:i:s', $locale = '')
     {
-       return $this->render( $value, $dateFormat, 'date', $locale );
+       return $this->render( $value, $dateFormat, 'dateTime', $locale );
     }
 
     protected function render($value, $dateFormat, $key, $locale)
