@@ -70,7 +70,7 @@ class RenderingEngine {
      * @param   string      $locale             Locale you would like to convert to
      * @return string
      */
-    public function time($date, $dateFormat = 'Y-m-d H:i:s', $locale = '')
+    public function time($date, $dateFormat = 'H:i:s', $locale = '')
     {
         return App::make( DateRenderingEngine::class )->time( $date, $dateFormat, $this->getLocale($locale) );
     }
@@ -81,7 +81,7 @@ class RenderingEngine {
      * @param   string      $locale             Locale you would like to convert to
      * @return string
      */
-    public function dateTime($date, $dateFormat = 'H:i:s', $locale = '')
+    public function dateTime($date, $dateFormat = 'Y-m-d H:i:s', $locale = '')
     {
         return App::make( DateRenderingEngine::class )->dateTime( $date, $dateFormat, $this->getLocale($locale) );
     }
