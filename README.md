@@ -80,7 +80,7 @@ Once all dependencies have been included and migrations have been run, you can s
     // Translate the message in the app default app locale
     Render::translate('your.key.goes.here');
 
-    // Translate the message recursively in a given locale - see [ixudra/translations](https://github.com/ixudra/translation) for details on recursive translations
+    // Translate the message recursively in a given locale - see my ixudra/translation package for details on recursive translations
     Render::recursive('admin.menu.title.new', array('model' => 'user'), true, $locale);
 
 
