@@ -6,17 +6,17 @@ use Carbon\Carbon;
 
 class DateRenderingEngine {
 
-    public function date($value, $dateFormat = 'Y-m-d', $locale = '')
+    public function date($value, $dateFormat = 'Y-m-d', $locale = null)
     {
        return $this->render( $value, $dateFormat, 'date', $locale );
     }
 
-    public function time($value, $dateFormat = 'H:i:s', $locale = '')
+    public function time($value, $dateFormat = 'H:i:s', $locale = null)
     {
        return $this->render( $value, $dateFormat, 'date', $locale );
     }
 
-    public function dateTime($value, $dateFormat = 'Y-m-d H:i:s', $locale = '')
+    public function dateTime($value, $dateFormat = 'Y-m-d H:i:s', $locale = null)
     {
        return $this->render( $value, $dateFormat, 'dateTime', $locale );
     }
@@ -24,15 +24,15 @@ class DateRenderingEngine {
     protected function render($value, $dateFormat, $key, $locale)
     {
         if( !( $value instanceof Carbon ) ) {
-            $value = Carbon::createFromFormat($dateFormat, $value);
+            $value = Carbon::createFromFormat( $dateFormat, $value );
         }
 
-        return $value->format( $this->getFormat($key, $locale) );
+        return $value->format( $this->getFormat( $key, $locale ) );
     }
 
     protected function getFormat($key, $locale)
     {
-        if( $locale === '' ) {
+        if( $locale === null ) {
             $locale = 'default';
         }
 
