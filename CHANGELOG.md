@@ -2,6 +2,10 @@
 
 All Notable changes to `ixudra/render` will be documented in this file
 
+## 1.1.0 2020-08-15
+### Added
+- Laravel 7 support
+
 ## 1.0.0 2019-05-13
 ### Added
 - Recursive translation functions in a given locale
