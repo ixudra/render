@@ -2,6 +2,10 @@
 
 All Notable changes to `ixudra/render` will be documented in this file
 
+## 1.2.0 2021-02-22
+### Added
+- Laravel 8 support
+
 ## 1.1.0 2020-08-15
 ### Added
 - Laravel 7 support
