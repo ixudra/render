@@ -10,6 +10,14 @@ class RenderServiceProvider extends ServiceProvider {
 
     public function register()
     {
+        $configPath = __DIR__ . '/config/config.php';
+
+        $this->mergeConfigFrom($configPath, 'render');
+
+        $this->publishes(array(
+            $configPath         => config_path('render.php'),
+        ), 'config');
+
         $this->app->singleton('Render', function () {
                 return new RenderingEngine();
             }
